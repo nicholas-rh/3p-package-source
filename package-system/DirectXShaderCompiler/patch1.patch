@@ -1,0 +1,11 @@
+--- src/tools/clang/include/clang/Basic/Version.h	2023-07-05 16:08:37.781694911 -0400
++++ src/tools/clang/include/clang/Basic/Version.h	2023-07-05 16:07:56.226934526 -0400
+@@ -16,6 +16,8 @@
+ #ifndef LLVM_CLANG_BASIC_VERSION_H
+ #define LLVM_CLANG_BASIC_VERSION_H
+ 
++#include <stdint.h>
++
+ #include "clang/Basic/Version.inc"
+ #include "llvm/ADT/StringRef.h"
+ 

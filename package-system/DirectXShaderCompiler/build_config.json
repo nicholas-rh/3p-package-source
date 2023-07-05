@@ -64,6 +64,7 @@
       },
       "Linux":{
          "Linux":{
+            "patch_file":"patch1.patch",
             "build_configs": ["Release"],
             "cmake_find_source":"FindDirectXShaderCompilerDxc.cmake.Linux",
             "cmake_generate_args":[
@@ -89,7 +90,10 @@
                "-DCLANG_INCLUDE_TESTS:BOOL=OFF",
                "-DHLSL_INCLUDE_TESTS:BOOL=ON",
                "-DENABLE_SPIRV_CODEGEN:BOOL=ON",
-               "-DSPIRV_BUILD_TESTS:BOOL=ON"
+               "-DSPIRV_BUILD_TESTS:BOOL=ON",
+               "-DSPIRV_WERROR:BOOL=OFF",
+               "-DCMAKE_C_COMPILER=clang",
+               "-DCMAKE_CXX_COMPILER=clang++"
             ],
             "cmake_build_args":[
                "--target",
