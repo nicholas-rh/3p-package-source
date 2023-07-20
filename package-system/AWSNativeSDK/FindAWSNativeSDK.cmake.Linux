@@ -15,12 +15,15 @@ set(AWS_BASE_PATH ${CMAKE_CURRENT_LIST_DIR}/${AWSNATIVESDK_PACKAGE_NAME})
 set(AWSNATIVESDK_INCLUDE_PATH ${AWS_BASE_PATH}/include)
 
 # Determine the lib path
-if(LY_SYSTEM_PACKAGE_AWSNativeSDK)
-    set(AWSNATIVE_SDK_LIB_PATH /usr/lib64)
-elseif(LY_MONOLITHIC_GAME)
+if(LY_MONOLITHIC_GAME)
     set(AWSNATIVE_SDK_LIB_PATH ${AWS_BASE_PATH}/lib/$<IF:$<CONFIG:Debug>,Debug,Release>)
 else()
+if (LY_SYSTEM_PACKAGE_AWSNativeSDK)
+    # TODO: Use the actual cmake modules as part of the aws-sdk-cpp package
+    set(AWSNATIVE_SDK_LIB_PATH /usr/lib64))
+else()
     set(AWSNATIVE_SDK_LIB_PATH ${AWS_BASE_PATH}/bin/$<IF:$<CONFIG:Debug>,Debug,Release>)
+endif()
 endif()
 
 # AWS Compile Definitions
@@ -80,7 +83,6 @@ function(ly_declare_aws_library)
     endif()
     
 endfunction()
-
 
 #### Core ####
 set(CORE_STATIC_LIBS
