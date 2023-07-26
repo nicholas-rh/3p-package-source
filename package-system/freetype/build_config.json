@@ -6,7 +6,6 @@
    "package_url":"https://www.freetype.org/",
    "package_license":"FTL",
    "package_license_file":"docs/FTL.TXT",
-   "cmake_find_source":"FindFreetype.cmake",
    "cmake_find_target":"FindFreetype.cmake",
    "cmake_build_args_common" : [ 
       "--parallel"
@@ -32,6 +31,7 @@
    ],
    "Platforms":{
       "Windows":{
+         "cmake_find_source":"FindFreetype.cmake",
          "Windows":{
             "depends_on_packages" :[ 
                ["zlib-1.2.11-rev5-windows", "8847112429744eb11d92c44026fc5fc53caa4a06709382b5f13978f3c26c4cbd", ""]
@@ -60,6 +60,7 @@
          }
       },
       "Darwin":{
+         "cmake_find_source":"FindFreetype.cmake",
          "Mac":{
             "depends_on_packages" :[ 
                ["zlib-1.2.11-rev5-mac", "b6fea9c79b8bf106d4703b67fecaa133f832ad28696c2ceef45fb5f20013c096", ""]
@@ -86,6 +87,7 @@
         }
       },
       "Linux":{
+         "cmake_find_source":"FindFreetype.cmake.Linux",
          "Linux":{
             "depends_on_packages" :[ 
                ["zlib-1.2.11-rev5-linux", "9be5ea85722fc27a8645a9c8a812669d107c68e6baa2ca0740872eaeb6a8b0fc", ""]
